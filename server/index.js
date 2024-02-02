@@ -6,13 +6,17 @@ const dbconnection = require("./Connection/database");
 const userRoute = require("./Router/UserRoute");
 dbconnection();
 
-app.use(
-  cors({
-    origin:process.env.BASE_URL,
-    methods: ["GET", "POST"],
-    credentials:true
-  })
-);
+const corsOptions = {
+  origin: process.env.BASE_URL,
+  methods: ["GET", "POST"],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
+
+// Log the origin for debugging
+console.log('CORS Origin:', corsOptions.origin);
+
 app.use(express.json());
 app.use("/", userRoute);
 app.listen(4000, () => {
