@@ -7,7 +7,7 @@ const userRoute = require("./Router/UserRoute");
 dbconnection();
 
 const corsOptions = {
-  origin: process.env.BASE_URL,
+  origin:"https://craxino-rc0omig5c-reshna-k-ps-projects.vercel.app/",
   methods: ["GET", "POST"],
   credentials: true
 };
