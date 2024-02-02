@@ -19,6 +19,7 @@ function Financialinformation() {
   const [additionalSavings, setAdditionalSavings] = useState("");
   const [currentPage, setCurrentPage] = useState(2); 
   const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
+ 
   const handleEmploymentStatusChange = (e) => {
     setEmploymentStatus(e.target.value);
   };
@@ -59,6 +60,7 @@ function Financialinformation() {
   console.log("User Data:", user);
   console.log("Profile Data:", profile);
   console.log("Work Data:", work);
+  console.log(baseUrl,"baseurl")
 
   return (
     <>
