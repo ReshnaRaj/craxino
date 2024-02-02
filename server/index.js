@@ -6,16 +6,8 @@ const dbconnection = require("./Connection/database");
 const userRoute = require("./Router/UserRoute");
 dbconnection();
 
-const corsOptions = {
-  origin:"https://craxino-rc0omig5c-reshna-k-ps-projects.vercel.app/",
-  methods: ["GET", "POST"],
-  credentials: true
-};
-
-app.use(cors(corsOptions));
-
-// Log the origin for debugging
-console.log('CORS Origin:', corsOptions.origin);
+app.use(cors());
+ 
 
 app.use(express.json());
 app.use("/", userRoute);
