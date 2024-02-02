@@ -6,7 +6,13 @@ const dbconnection = require("./Connection/database");
 const userRoute = require("./Router/UserRoute");
 dbconnection();
 
-app.use(cors());
+app.use(
+  cors({
+    origin:"*",
+    methods: ["GET", "POST"],
+    credentials:true
+  })
+);
  
 
 app.use(express.json());
